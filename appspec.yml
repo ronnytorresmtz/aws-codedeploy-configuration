@@ -1,14 +1,14 @@
 version: 0.0
 os: linux
 files:
-  - source: /index.html
+    source: /index.html
     destination: /var/www/html/
 hooks:
   BeforeInstall:
-  - location: scripts/before_install.sh
-      timeout: 300
-      runas: ubuntu
+    location: scripts/before_install.sh
+    timeout: 300
+    runas: ubuntu
   AfterInstall:
-    - location: scripts/restart_server.sh
-      timeout: 300
-      runas: ubuntu
+    location: scripts/restart_server.sh
+    timeout: 300
+    runas: ubuntu
