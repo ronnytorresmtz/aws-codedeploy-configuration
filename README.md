@@ -1,18 +1,20 @@
-AWS CODEDEPLOY EXAMPLE
+#AWS CODEDEPLOY EXAMPLE
 
-Step 1: Files to Store in the GitHub Repository
+---
+
+##Step 1: Files to Store in the GitHub Repository
 
     The file appspec.yaml contains the instructions to transfer files from GitHub Source to AWS EC2 Destination.
 
-    The script directy contains some .sh files with some commands to execute before or after the file transfer action.
+    The script directy contains some .sh files with some commands to execute before or after the file transfer 
+    action.
 
-    The file appspec.yalm and the script directoy and its files should be store in the Github Repository at the root level.
+    The file appspec.yalm and the script directoy and its files should be store in the Github Repository at the 
+    root level.
 
-Step 2:  AWS permission configuracion
+##Step 2:  AWS permission configuracion
 
-a) Go to the IAM Management Console.
-
-b) Create two roles
+  ###Go to the IAM Management Console and Create 2 roles:
 
     1) Role Name: CodeDeploy with the Policy Name: AWSCodeDeployRole add in the Trush Relationship this code:
 
@@ -33,7 +35,7 @@ b) Create two roles
     2) Role Name: CodeDeploy-E2 with the Policy Name: AmazonS3ReadOnlyAccess.
 
 
-Step 3: Intall the CodeDeploy Agent
+##Step 3: Intall the CodeDeploy Agent
 
       sudo apt-get install python-pip ruby wget
       cd /home/ubuntu
@@ -42,19 +44,20 @@ Step 3: Intall the CodeDeploy Agent
       sudo ./install auto
       sudo service codedeploy-agent start
       sudo service codedeploy-agent status
+      
+      
+#To Deploy from Github to AWS Manually 
 
-To Deploy from Github to AWS Manually 
+---
 
-  Go to the AWS CodeDeploy Service and follow this:
-  
-  1) Create an Application
+###1) Go to the AWS CodeDeploy Service and Create an Application:
   
     a) Set an Application Name, Deployment Group Name and Add the Instance for the Development Group.
     b) Select the Deployment Configuracion (Ex.OneAtATime).
     c) Select the Service Role "arn:aws:iam::....../DeployCode".
     d) Press the button Create Application.
    
-  2) Deploy a New Revisión (commit)
+###2) Deploy a New Revisión (commit)
   
     a) Select the Deployment Group from the table.
     b) Select the Action "Deploy new revision" to display the Page Create a New Deploy.
