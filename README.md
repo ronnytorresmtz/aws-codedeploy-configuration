@@ -13,7 +13,7 @@
 
 ##Step 2:  AWS permission configuracion
 
-  ###Go to the IAM Management Console and Create 2 roles:
+  ##Go to the IAM Management Console and Create 2 roles:
 
     1) Role Name: CodeDeploy with the Policy Name: AWSCodeDeployRole add in the Trush Relationship this code:
 
