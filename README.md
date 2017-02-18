@@ -47,7 +47,7 @@
  
 
 
-#II.-Deploy from Github to AWS Manually 
+#II.-Make a Deploy from Github to AWS Manually 
 
 
 ##1) Go to the AWS CodeDeploy Service and Create an Application:
