@@ -1,6 +1,5 @@
 #AWS CODEDEPLOY EXAMPLE
 
----
 
 ##Step 1: Files to Store in the GitHub Repository
 
@@ -48,16 +47,15 @@
       
 #To Deploy from Github to AWS Manually 
 
----
 
-###1) Go to the AWS CodeDeploy Service and Create an Application:
+##1) Go to the AWS CodeDeploy Service and Create an Application:
   
     a) Set an Application Name, Deployment Group Name and Add the Instance for the Development Group.
     b) Select the Deployment Configuracion (Ex.OneAtATime).
     c) Select the Service Role "arn:aws:iam::....../DeployCode".
     d) Press the button Create Application.
    
-###2) Deploy a New Revisión (commit)
+##2) Deploy a New Revisión (commit)
   
     a) Select the Deployment Group from the table.
     b) Select the Action "Deploy new revision" to display the Page Create a New Deploy.
