@@ -1,4 +1,4 @@
-#AWS CODEDEPLOY EXAMPLE
+#I.- AWS CodeDeploy Configuration
 
 
 ##Step 1: Files to Store in the GitHub Repository
@@ -43,9 +43,11 @@
       sudo ./install auto
       sudo service codedeploy-agent start
       sudo service codedeploy-agent status
-      
-      
-#To Deploy from Github to AWS Manually 
+ 
+ 
+
+
+#II.-Deploy from Github to AWS Manually 
 
 
 ##1) Go to the AWS CodeDeploy Service and Create an Application:
