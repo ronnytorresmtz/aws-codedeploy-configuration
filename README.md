@@ -2,11 +2,11 @@ AWS CODEDEPLOY EXAMPLE
 
 Step 1: Files to Store in the GitHub Repository
 
-The file appspec.yaml contains the instructions to transfer files from GitHub Source to AWS EC2 Destination.
+    The file appspec.yaml contains the instructions to transfer files from GitHub Source to AWS EC2 Destination.
 
-The script directy contains some .sh files with some commands to execute before or after the file transfer action.
+    The script directy contains some .sh files with some commands to execute before or after the file transfer action.
 
-The file appspec.yalm and the script directoy and its files should be store in the Github Repository at the root level.
+    The file appspec.yalm and the script directoy and its files should be store in the Github Repository at the root level.
 
 Step 2:  AWS permission configuracion
 
@@ -48,6 +48,7 @@ To Deploy from Github to AWS Manually
   Go to the AWS CodeDeploy Service and follow this:
   
   1) Create an Application
+  
     a) Set an Application Name, Deployment Group Name and Add the Instance for the Development Group.
     b) Select the Deployment Configuracion (Ex.OneAtATime).
     c) Select the Service Role "arn:aws:iam::....../DeployCode".
