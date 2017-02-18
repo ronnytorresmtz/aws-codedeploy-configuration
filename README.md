@@ -78,6 +78,90 @@
     g) Select Rollback Configuration.
     h) Press button Deploy Now
     
+    
+#III.- Autodeploy from Github to AWS EC2 instance
+
+##Step 1: Create an IAM Policy
+   
+  Create a IAM policy which give access to register and create a new deployment, also to create new revision for a deployment group.
+  
+    a)  Select a create Your Own Policy and give a name like codedeploy-github-access
+    b) In the Policy document paste the follow json object:
+        
+        {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": "codedeploy:GetDeploymentConfig",
+              "Resource": "arn:aws:codedeploy:ACCOUNT_REGION:ACCOUNT_ID:deploymentconfig:*"
+            },
+            {
+              "Effect": "Allow",
+              "Action": "codedeploy:RegisterApplicationRevision",
+              "Resource": "arn:aws:codedeploy:ACCOUNT_REGION:ACCOUNT_ID:application:APPLICATION_NAME"
+            },
+            {
+              "Effect": "Allow",
+              "Action": "codedeploy:GetApplicationRevision",
+              "Resource": "arn:aws:codedeploy:ACCOUNT_REGION:ACCOUNT_ID:application:APPLICATION_NAME"
+            },
+            {
+              "Effect": "Allow",
+              "Action": "codedeploy:CreateDeployment",
+              "Resource": "arn:aws:codedeploy:ACCOUNT_REGION:ACCOUNT_ID:deploymentgroup:APPLICATION_NAME/DEPLOYMENT_GROUP"
+            }
+          ]
+        }
+        
+    c) Change in the Json Objet the words
+    
+        - ACCESS_REGION with the E2 Instance Region (lIKE us-west-2).
+        - ACCOUNT_ID with the one found in My Account Page -> Congiguration Account.
+        - APPLICATION_NAME found in the CodeDeploy Console.
+        - DEPLOYMENT_GROUP found in the CodeDeploy Console.
+
+##Step 2: Create an IAM User
+
+    a) Give a Name to the User like CodeDeployUser
+    b) Attach the Policy created in the Step 1
+    c) Download/Copy the Access ID and the Secret Access Token and store in a secure place.
+
+##Step 3: Github Integration
+
+   a) Generate a new personal aceess token in the Personal Setting Page -> Develop Settings -> Personal access tokens
+   
+        - Set a Token Description like autodeploy-codedeploy
+        - Check repo:status and repo_deployment
+        - Press the button Regenerate Token
+        - Download/Copy the Github Token and store in a secure place, it will be need for the Github AutoDeployment integration.
+        
+   b) Crete two integration services in Github
+   
+      Go to Proyect Settings -> Integration and Services
+       
+      Add a Service: AWS CodeDeploy
+      
+           - Set the Application Name found in the ASW CodeDeploy Console.
+           - Set the Development Group found in the ASW CodeDeploy Console.
+           - Set the AWS Access Key from the user (codedeploy-github-user) created in the AWS CodeDeploy Console.
+           - Set the AWS Instance Region (like us-west 2).
+           - Set the AWS Secret Access Key from the user (codedeploy-github-user) created in the AWS CodeDeploy Console.
+           - Press the button Add Servie
+           
+           Other fields are optional.
+           
+      Add a Service: Github Auto-Deployment
+      
+           - Input the Github Token Generated above.
+           - Input the Enviromentment take it from the AWS CodDeploy Development Group.
+           - If you are using Continues Integration (CI) check Deploy on status
+            
+            Other fields are optional.
+            -
+Now when we edit file and commit on master branch or merge any pull request a new deployment will be created on AWS CodeDeploy base on the appspec.yaml file.  
+
+Done!!!    
 
 [REFERENCES; crypt.codemancers.com, Author: Revath S Kumar  - December 26, 2016](http://crypt.codemancers.com/posts/2016-12-26-autodeploy-from-github-using-aws-codedeploy/)
 
