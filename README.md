@@ -33,8 +33,9 @@
 
     2) Role Name: CodeDeploy-E2 with the Policy Name: AmazonS3ReadOnlyAccess.
 
-
-##Step 3: Install the CodeDeploy Agent
+##Step 3: Create an EC2 instance (Ubuntu / Linux) with the Role: code-deploy-ec2
+    
+##Step 4: Install the CodeDeploy Agent
 
       sudo apt-get install python-pip ruby wget
       cd /home/ubuntu
