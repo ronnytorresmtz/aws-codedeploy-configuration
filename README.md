@@ -45,8 +45,6 @@
       sudo service codedeploy-agent status
  
  
-
-
 #II.-Make a Deploy from Github to AWS Manually 
 
 
@@ -59,6 +57,8 @@
    
 ##2) Deploy a New Revisión (commit)
   
+  Go to your GitHub Repository and make any commit after that make with the AWS CodeDeploy Service a Deployment.
+    
     a) Select the Deployment Group from the table.
     b) Select the Action "Deploy new revision" to display the Page Create a New Deploy.
     
