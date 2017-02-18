@@ -83,7 +83,8 @@
 
 ##Step 1: Create an IAM Policy
    
-  Create a IAM policy which give access to register and create a new deployment, also to create new revision for a deployment group.
+  Create a IAM policy which give access to register and create a new deployment, also to create new 
+  revision for a deployment group.
   
     a) Select a create Your Own Policy and give a name like codedeploy-github-access
     b) Paste this json objet in the Policy Document Field:
@@ -109,7 +110,8 @@
             {
               "Effect": "Allow",
               "Action": "codedeploy:CreateDeployment",
-              "Resource": "arn:aws:codedeploy:ACCOUNT_REGION:ACCOUNT_ID:deploymentgroup:APPLICATION_NAME/DEPLOYMENT_GROUP"
+              "Resource": "arn:aws:codedeploy:ACCOUNT_REGION:ACCOUNT_ID:deploymentgroup:
+              APPLICATION_NAME/DEPLOYMENT_GROUP"
             }
           ]
         }
@@ -134,33 +136,35 @@ a) Generate a new personal aceess token in the Personal Setting Page -> Develop 
     - Set a Token Description like autodeploy-codedeploy
     - Check repo:status and repo_deployment
     - Press the button Regenerate Token
-    - Download/Copy the Github Token and store in a secure place, it will be need for the Github AutoDeployment integration.
+    - Download/Copy the Github Token and store in a secure place, it will be need for the 
+    Github AutoDeployment integration.
    
    
 b) Crete two integration services in Github
    
-  Go to Proyect Settings -> Integration and Services
+Go to Proyect Settings -> Integration and Services
 
-  Add a Service: AWS CodeDeploy
+Add a Service: AWS CodeDeploy
 
-       - Set the Application Name found in the ASW CodeDeploy Console.
-       - Set the Development Group found in the ASW CodeDeploy Console.
-       - Set the AWS Access Key from the user (codedeploy-github-user) created in the AWS CodeDeploy Console.
-       - Set the AWS Instance Region (like us-west 2).
-       - Set the AWS Secret Access Key from the user (codedeploy-github-user) created in the AWS CodeDeploy Console.
-       - Press the button Add Servie
+   - Set the Application Name found in the ASW CodeDeploy Console.
+   - Set the Development Group found in the ASW CodeDeploy Console.
+   - Set the AWS Access Key from the user (codedeploy-github-user) created in the AWS CodeDeploy Console.
+   - Set the AWS Instance Region (like us-west 2).
+   - Set the AWS Secret Access Key from the user (codedeploy-github-user) created in the AWS CodeDeploy Console.
+   - Press the button Add Servie
 
-       Other fields are optional.
+   Other fields are optional.
 
-  Add a Service: Github Auto-Deployment
+Add a Service: Github Auto-Deployment
 
-       - Input the Github Token Generated above.
-       - Input the Enviromentment take it from the AWS CodDeploy Development Group.
-       - If you are using Continues Integration (CI) check Deploy on status
+   - Input the Github Token Generated above.
+   - Input the Enviromentment take it from the AWS CodDeploy Development Group.
+   - If you are using Continues Integration (CI) check Deploy on status
 
-        Other fields are optional.
-        -
-Now when we edit file and commit on master branch or merge any pull request a new deployment will be created on AWS CodeDeploy base on the appspec.yaml file.  
+    Other fields are optional.
+
+Now when we edit file and commit on master branch or merge any pull request a new deployment will be created 
+on AWS CodeDeploy base on the appspec.yaml file.  
 
 Done!!!    
 
