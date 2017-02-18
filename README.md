@@ -33,7 +33,12 @@
 
     2) Role Name: CodeDeploy-E2 with the Policy Name: AmazonS3ReadOnlyAccess.
 
-##Step 3: Create an EC2 instance (Ubuntu / Linux) with the Role: code-deploy-ec2
+##Step 3: Create an EC2 instance (Ubuntu / Linux)  
+        
+       Set IAM Role as code-deploy-ec2
+       Enable Protect against accidental termination
+       Add a Tag Name for the Instance
+       Configure Security Group (Open Ports)
     
 ##Step 4: Install the CodeDeploy Agent
 
