@@ -55,7 +55,7 @@
     c) Select the Service Role "arn:aws:iam::....../DeployCode".
     d) Press the button Create Application.
    
-##2) Deploy a New Revision (commit)
+##2) Deploy a New Revision / Commit
   
   Go to your GitHub Repository and make any commit after that Deploy a New Revision with the AWS CodeDeploy Service and follow this instructions.
     
