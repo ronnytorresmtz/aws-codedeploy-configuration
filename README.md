@@ -1,6 +1,6 @@
 #I.- AWS CodeDeploy Configuration
 
-<img src="/autodeploy-github-to-aws.PNG" width="700"/>
+<img src="/autodeploy-github-to-aws.PNG" width="1000"/>
 
 ##Step 1: Files to Store in the GitHub Repository
 
