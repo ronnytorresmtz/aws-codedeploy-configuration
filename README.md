@@ -175,6 +175,6 @@ Done!!!
 
 [Autodeploy from github using AWS CodeDeploy](http://crypt.codemancers.com/posts/2016-12-26-autodeploy-from-github-using-aws-codedeploy/), From: crypt.codemancers.com, Author: Revath S Kumar  Publish Date: December 26, 2016
 
-[Automatically Deploy from GitHub Using AWS CodeDeploy](https://aws.amazon.com/es/blogs/devops/automatically-deploy-from-github-using-aws-codedeploy/) from aws.amazon.com, Author: Rob Brigham Publish Date: December 18, 2014
+[Automatically Deploy from GitHub Using AWS CodeDeploy](https://aws.amazon.com/es/blogs/devops/automatically-deploy-from-github-using-aws-codedeploy/) From aws.amazon.com, Author: Rob Brigham Publish Date: December 18, 2014
 
 
